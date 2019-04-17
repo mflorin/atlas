@@ -1,8 +1,8 @@
 require 'typhoeus'
 require 'json'
 
-require 'lib/injector'
-require 'lib/console'
+require 'atlas/injector'
+require 'atlas/console'
 
 module Atlas
 

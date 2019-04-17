@@ -1,6 +1,6 @@
-require 'lib/console'
-require 'lib/request'
-require 'lib/library'
+require 'atlas/console'
+require 'atlas/request'
+require 'atlas/library'
 
 module Atlas
   class TestException < StandardError; end

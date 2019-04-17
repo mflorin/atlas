@@ -1,6 +1,6 @@
-require 'lib/console'
-require 'lib/request'
-require 'lib/test'
+require 'atlas/console'
+require 'atlas/request'
+require 'atlas/test'
 
 module Atlas
 
