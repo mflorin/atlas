@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = 'greenlight'
-  s.version       = '0.0.1-alpha'
+  s.version       = '0.0.1'
   s.date          = '2019-04-24'
   s.summary       = 'Automated Tests Language for APIs'
   s.description   = 'A Ruby DSL to help writing automated tests for APIs.'
