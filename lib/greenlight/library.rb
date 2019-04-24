@@ -1,10 +1,10 @@
-require 'atlas/console'
-require 'atlas/library'
-require 'atlas/request'
-require 'atlas/test'
-require 'atlas/scenario'
+require 'greenlight/console'
+require 'greenlight/library'
+require 'greenlight/request'
+require 'greenlight/test'
+require 'greenlight/scenario'
 
-module Atlas
+module Greenlight
 	class LibraryException < StandardError; end
 
 	class Library

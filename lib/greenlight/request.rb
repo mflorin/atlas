@@ -1,10 +1,10 @@
 require 'typhoeus'
 require 'json'
 
-require 'atlas/injector'
-require 'atlas/console'
+require 'greenlight/injector'
+require 'greenlight/console'
 
-module Atlas
+module Greenlight
 
   class RequestException < StandardError; end
   class AssertionException < StandardError; end

@@ -1,8 +1,8 @@
-require 'atlas/console'
-require 'atlas/request'
-require 'atlas/test'
+require 'greenlight/console'
+require 'greenlight/request'
+require 'greenlight/test'
 
-module Atlas
+module Greenlight
 
   class ScenarioException < StandardError; end
 
@@ -19,7 +19,7 @@ module Atlas
     def run
       action Colors.white("SCENARIO ") + Colors.light_magenta(name)
       Console.instance.indent
-      ret = Atlas.eval({}, &body)
+      ret = Greenlight.eval({}, &body)
       success('scenario succeeded')
       ret
     rescue RequestException

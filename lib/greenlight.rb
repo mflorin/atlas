@@ -1,14 +1,14 @@
-require 'atlas/console'
-require 'atlas/request'
-require 'atlas/test'
-require 'atlas/scenario'
-require 'atlas/library'
+require 'greenlight/console'
+require 'greenlight/request'
+require 'greenlight/test'
+require 'greenlight/scenario'
+require 'greenlight/library'
 require 'singleton'
 require 'yaml'
 require 'json'
 require 'typhoeus'
 
-module Atlas
+module Greenlight
   class Runner
     include Singleton
 
@@ -16,7 +16,7 @@ module Atlas
 
     attr_accessor :libraries
 
-    ATLAS_ENV_PREFIX = 'atlas'
+    ATLAS_ENV_PREFIX = 'greenlight'
     ATLAS_ENV_SEPARATOR = '_'
 
     private
@@ -163,16 +163,16 @@ module Atlas
   end
 end
 
-def atlas(&block)
+def greenlight(&block)
   begin
-    Atlas.eval({}, &block)
-  rescue Atlas::LibraryException
+    Greenlight.eval({}, &block)
+  rescue Greenlight::LibraryException
     failure
-  rescue Atlas::ScenarioException
+  rescue Greenlight::ScenarioException
     failure
-  rescue Atlas::TestException
+  rescue Greenlight::TestException
     failure
-  rescue Atlas::RequestException
+  rescue Greenlight::RequestException
     failure
   rescue StandardError => e
     info e.backtrace.inspect

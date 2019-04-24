@@ -1,8 +1,8 @@
-require 'atlas/console'
-require 'atlas/request'
-require 'atlas/library'
+require 'greenlight/console'
+require 'greenlight/request'
+require 'greenlight/library'
 
-module Atlas
+module Greenlight
   class TestException < StandardError; end
 
   class Test
@@ -19,7 +19,7 @@ module Atlas
       action Colors.white("TEST ") + Colors.yellow(name)
       Console.instance.indent
       begin
-        ret = Atlas.eval(args, &body)
+        ret = Greenlight.eval(args, &body)
         success('test succeeded')
         ret
       rescue RequestException
