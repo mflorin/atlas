@@ -1,6 +1,5 @@
 require 'greenlight/console'
 require 'greenlight/request'
-require 'greenlight/library'
 
 module Greenlight
   class TestException < StandardError; end
@@ -23,9 +22,6 @@ module Greenlight
         success('test succeeded')
         ret
       rescue RequestException
-        error error_msg
-        raise TestException
-      rescue LibraryException
         error error_msg
         raise TestException
       rescue StandardError => e

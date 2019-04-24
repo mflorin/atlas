@@ -143,8 +143,6 @@ end
 def greenlight(&block)
   begin
     Greenlight.eval({}, &block)
-  rescue Greenlight::LibraryException
-    failure
   rescue Greenlight::ScenarioException
     failure
   rescue Greenlight::TestException

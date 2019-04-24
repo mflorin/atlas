@@ -28,9 +28,6 @@ module Greenlight
     rescue TestException
       error error_msg
       raise ScenarioException
-    rescue LibraryException
-      error error_msg
-      raise ScenarioException
     rescue StandardError => e
       error e.backtrace.inspect
       error e.message
