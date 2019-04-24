@@ -2,7 +2,6 @@ require 'greenlight/console'
 require 'greenlight/request'
 require 'greenlight/test'
 require 'greenlight/scenario'
-require 'greenlight/library'
 require 'singleton'
 require 'yaml'
 require 'json'
@@ -13,8 +12,6 @@ module Greenlight
     include Singleton
 
     attr_accessor :params, :data
-
-    attr_accessor :libraries
 
     ATLAS_ENV_PREFIX = 'greenlight'
     ATLAS_ENV_SEPARATOR = '_'
@@ -90,7 +87,6 @@ module Greenlight
     end
 
     def initialize
-      self.libraries = {}
       self.params = {}
       self.data = {}
     end
@@ -119,25 +115,6 @@ module Greenlight
 
     def scenario(name, &block)
       Scenario.new(name, &block).run
-    end
-
-    def library(name, &block)
-      if libraries.key?(name)
-        lib = libraries[name]
-      else
-        lib = Library.new(name)
-        libraries[name] = lib
-      end
-
-      lib.instance_eval(&block)
-    end
-
-    def lib(name)
-      unless libraries.key?(name)
-        error "library #{name} not found"
-        raise LibraryException
-      end
-      libraries[name]
     end
 
     def add_header(header, value)
