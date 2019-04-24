@@ -1,0 +1,5 @@
+username: user
+password: password
+hosts:
+    auth: http://my.auth.api.host:1234
+    some_api: http://my.api:5678
