@@ -1,2 +1,2 @@
-# atlas
+# Greenlight
 Automated Tests Language for APIs
